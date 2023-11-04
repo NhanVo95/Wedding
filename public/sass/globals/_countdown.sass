@@ -1,0 +1,53 @@
+@import "../utilities/_variable"
+
+.countdown
+    padding: 2em
+
+    & center
+        & .label
+            color: $--clr-black-600
+            font-family: $--ff-sans-serif
+            font-size: $--fs-400
+            font-weight: $--fw-bold
+            margin: 0
+            line-height: $--fs-300
+
+        & .heart
+            width: 15em
+            display: flex
+            flex-wrap: nowrap
+            justify-content: flex-start
+            align-items: center
+            /* making vertical centerign of all children */
+
+            & p
+                color: $--clr-primary-800
+                font-family: $--ff-serif
+                font-size: $--fs-400
+                font-weight: $--fw-medium
+                margin: 0
+                line-height: 5rem
+                padding: 0 0.5em
+
+        & .heart::before, & .heart::after
+            content: ''
+            flex: 1 1 auto
+            /* the first digint is 'flex-grow: 1', helps elemet to occupy all free space */
+            border-bottom: solid 1px $--clr-primary-800
+
+    & canvas#countdown
+        width: 900rem
+        height: 200rem
+        display: block
+        position: relative
+        background: transparent
+        margin: 1em auto
+
+// #countdown {
+//     color: $--clr-neutral-100;
+//     font-family: $--ff-sans-serif;
+//     font-size: $--fs-700;
+//     font-weight: $--fw-bold;
+//     background-color: $--clr-black-700;
+//     text-align: center;
+// }

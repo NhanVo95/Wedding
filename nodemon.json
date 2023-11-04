@@ -1,0 +1,12 @@
+{
+  "restartable": "rs",
+  "ignore": ["./node_modules", "*.pug", "./public/pdf", "./mongodb"],
+  "verbose": true,
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "events": {
+    "restart": "echo \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\""
+  },
+  "ext": "js,json"
+}

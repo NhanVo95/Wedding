@@ -1,0 +1,30 @@
+@use 'sass:list'
+
+@import "./utilities/_variable"
+
+$area: header slideshow calendar countdown titlegroombride groom bride button loveStory gallery titleEvents events titleWishes formWishes replyWishes RSVP footer
+
+body
+  & .grid-container
+    display: grid
+    background-color: $--clr-neutral-100
+
+    @for $index from 1 through length($area)
+      & .item:nth-child(#{$index})
+        grid-area: list.nth($area, $index)
+
+  &.grid-container > div
+    // text-align: center
+    // vertical-align: middle
+
+@media screen and (min-width: 950px)
+  body
+    & .grid-container
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-areas: "header header" "slideshow slideshow" "calendar countdown" "titlegroombride titlegroombride" "groom bride" "button button" "loveStory loveStory" "gallery gallery" "titleEvents titleEvents" "events events" "titleWishes titleWishes" "formWishes replyWishes" "RSVP RSVP" "footer footer"
+
+@media screen and (max-width: 950px)
+  body
+    & .grid-container
+      grid-template-columns: 1fr
+      grid-template-areas: "header" "slideshow" "calendar" "countdown" "titlegroombride" "groom" "bride" "button" "loveStory" "gallery" "titleEvents" "events" "titleWishes" "formWishes" "replyWishes" "RSVP" "footer"

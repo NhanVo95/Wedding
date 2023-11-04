@@ -1,0 +1,47 @@
+@import "../utilities/_variable"
+
+.slideshow
+    background-image: url("/img/img-1.jpg"), $--dark-overlay
+    background-blend-mode: overlay
+    background-size: cover
+    background-position: 0% 10%
+    background-repeat: no-repeat
+    background-attachment: fixed
+    max-width: 100%
+    height: auto
+
+    & .content-container
+        padding: 25% 0 25% 5%
+
+        & .name
+            color: $--clr-neutral-100
+            font-family: $--ff-sans-serif
+            font-size: $--fs-500
+            font-weight: $--fw-bold
+            margin: 0
+            line-height: 5rem
+
+        & .date
+            color: $--clr-neutral-100
+            font-family: $--ff-serif
+            font-size: $--fs-400
+            font-weight: $--fw-medium
+            margin: 0
+            line-height: 5rem
+            vertical-align: middle
+            text-align: center
+            padding: 0
+            padding-left: 0.5em
+            padding-right: 0.5em
+
+        & .separator
+            border-bottom: 1px solid $--clr-neutral-100
+            width: 20%
+
+        & .text
+            color: $--clr-neutral-100
+            font-family: $--ff-sans-serif
+            font-size: $--fs-500
+            font-weight: $--fw-bold
+            margin: 0
+            line-height: 5rem

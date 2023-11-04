@@ -1,0 +1,123 @@
+@use "sass:meta"
+@use "sass:string"
+@use 'sass:list'
+
+@import "../utilities/_variable"
+
+$span: span1 span2 span3 span4
+
+@mixin wrapper
+  position: relative
+  display: inline-block
+  padding: 10px 20px
+  color: $--clr-primary-800
+  font-size: 16px
+  text-decoration: none
+  text-transform: uppercase
+  overflow: hidden
+  transition: .5s
+  margin-top: 40px
+  letter-spacing: 4px
+  margin: 0 2em
+
+@mixin wrapperHover
+  background: $--clr-primary-800
+  color: #fff
+  border-radius: 5px
+  box-shadow: 0 0 5px $--clr-primary-800, 0 0 25px $--clr-primary-800, 0 0 50px $--clr-primary-800, 0 0 100px $--clr-primary-800
+
+@mixin span($index)
+  position: absolute
+  display: block
+  @if $index == 1
+    top: 0
+    left: -100%
+    width: 100%
+    height: 2px
+    background: linear-gradient(90deg, transparent, $--clr-primary-800)
+    animation: btn-anim1 2s linear infinite
+  @else if $index == 2
+    top: -100%
+    right: 0
+    width: 2px
+    height: 100%
+    background: linear-gradient(180deg, transparent, $--clr-primary-800)
+    animation: btn-anim2 2s linear infinite
+    animation-delay: .5s
+  @else if $index == 3
+    bottom: 0
+    right: -100%
+    width: 100%
+    height: 2px
+    background: linear-gradient(270deg, transparent, $--clr-primary-800)
+    animation: btn-anim3 2s linear infinite
+    animation-delay: 1s
+  @else if $index == 4
+    bottom: -100%
+    left: 0
+    width: 2px
+    height: 100%
+    background: linear-gradient(360deg, transparent, $--clr-primary-800)
+    animation: btn-anim4 2s linear infinite
+    animation-delay: 1.5s
+
+@keyframes btn-anim1
+  0%
+    left: -100%
+
+  50%,100%
+    left: 100%
+
+@keyframes btn-anim2
+  0%
+    top: -100%
+
+  50%,100%
+    top: 100%
+
+@keyframes btn-anim3
+  0%
+    right: -100%
+
+  50%,100%
+    right: 100%
+
+@keyframes btn-anim4
+  0%
+    bottom: -100%
+
+  50%,100%
+    bottom: 100%
+
+.button
+  text-align: center
+
+  & .wishes
+    @include wrapper
+
+    @for $index from 1 through 4
+      & span:nth-child(#{$index})
+        @include span($index)
+
+  & .wishes:hover
+    @include wrapperHover
+
+  & .rsvp
+    @include wrapper
+
+    @for $index from 1 through 4
+      & span:nth-child(#{$index})
+        @include span($index)
+
+  & .rsvp:hover
+    @include wrapperHover
+
+  & .gift
+    @include wrapper
+
+    @for $index from 1 through 4
+      & span:nth-child(#{$index})
+        @include span($index)
+
+  & .gift:hover
+    @include wrapperHover

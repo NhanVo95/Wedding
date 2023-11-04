@@ -1,0 +1,221 @@
+extends layout
+
+block stylesheet 
+  //- link(rel='stylesheet' href='css/bootstrap.min.css')
+  //- link(href='css/animate.css' rel='stylesheet' media='screen')
+  //- link(rel='stylesheet' href='css/styles.css')
+  //- link(href='font/css/font-awesome.min.css' rel='stylesheet')
+  //- link(rel='stylesheet' href='font/DancingScript-VariableFont_wght.ttf')
+
+  link(rel="preconnect" href="https://fonts.googleapis.com")
+  link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+  link(href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet")
+
+  link(rel='stylesheet' href='/css/style.css')
+
+block header
+  .navbar 
+    a.hompage(href="/")
+      img.custom-logo(src='/img/logo.png' alt='Nhan & Thy')
+
+block slideshow
+  .content-container
+    .name Thành Nhân &#38 Anh Thy
+    table
+      tr
+        td.separator &nbsp;
+        td.date(rowspan='2') 03 | DEC | 2023
+        td.separator &nbsp;
+      tr
+        td &nbsp;
+        td &nbsp;
+    .text Save The Date
+
+block calendar
+  center
+    table
+      caption#caption
+      tbody#calendar
+
+block countdown
+  center 
+    .label Until Our Big Day
+    .heart
+      p &#9825
+    canvas#countdown
+
+block titlegroombride
+  center.title 
+    .label Groom and Bride 
+    .separator
+      p &#9825
+
+block groom
+  .avatar(alt="Groom Nhan Vo")
+  p.name Võ Thành Nhân
+  p.info Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit condimentum risus, vel tristique libero elementum eget.
+
+block bride
+  .avatar(alt="Bride Thy Phung")
+  p.name Phùng Anh Thy
+  p.info Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit condimentum risus, vel tristique libero elementum eget.
+
+block button
+  a.wishes(href='#')
+    span
+    span
+    span
+    span
+    |   Send wishes
+  a.rsvp(href='#')
+    span
+    span
+    span
+    span
+    |   RSVP
+  a.gift(href='#')
+    span
+    span
+    span
+    span
+    |   Send wedding gift
+
+block gallery
+  center.title 
+    .label Captured Moments
+    .separator
+      p &#9825
+
+  .grid-container-gallery#container-gallery
+    each n in data
+      if n.show == "TRUE"
+        .gallery-item 
+          .content
+            img(class= n.type src="https://drive.google.com/uc?export=view&id=" + n.id alt="")
+
+block titleEvents
+  center.title 
+    .label Celebrate Our Love 
+    .label-date 03/12/2023
+    .separator
+      p &#9825
+
+block events 
+  .grid-container-events
+    .item-event
+      center
+        .name Lễ cưới nhà gái
+        .divider 
+          p &#9825
+        .time 07:00 AM 03/12/2023
+        .address
+          span Số 39, Tổ 11, Ấp Tân Triều,<br>Tân Bình, Vĩnh Cửu, Đồng Nai
+        a.map-direction(href="https://maps.app.goo.gl/EG6XpwxrGZHd6xNQA" target="_blank")
+          span Xem bản đồ
+
+    .item-event 
+      center
+        .name Lễ cưới nhà trai
+        .divider
+          p &#9825
+        .time 09:00 AM 03/12/2023
+        .address
+          span Số 60 Tô Vĩnh Diện, P. Linh Chiểu,<br>TP. Thủ Đức, TP. Hồ Chí Minh
+        a.map-direction(href="https://maps.app.goo.gl/6uaVwXRPzsiJZybr8" target="_blank")
+          span Xem bản đồ
+
+    .item-event
+      center
+        .name Tiệc cưới nhà gái
+        .divider 
+          p &#9825
+        .time 10:00 AM 26/11/2023
+        .address
+          span Số 39, Tổ 11, Ấp Tân Triều,<br>Tân Bình, Vĩnh Cửu, Đồng Nai
+        a.map-direction(href="https://maps.app.goo.gl/EG6XpwxrGZHd6xNQA" target="_blank")
+          span Xem bản đồ
+
+    .item-event
+      center
+        .name Tiệc cưới nhà trai
+        .divider 
+          p &#9825
+        .time 11:00 AM 03/12/2023
+        .address
+          span Moon Palace<br>Số 624 Kha Vạn Cân, P. Linh Đông,<br>TP. Thủ Đức, TP. Hồ Chí Minh
+        a.map-direction(href="https://maps.app.goo.gl/2SFwQWaup2z7E8kY7" target="_blank")
+          span Xem bản đồ
+
+block titleWishes
+  center.title 
+    .label Send your wishes
+    .separator
+      p &#9825
+
+block formWishes 
+  form(action='#')
+    .form-row
+      .input-data
+        input(type='text' required='')
+        .underline
+        label(for='') First Name
+      .input-data
+        input(type='text' required='')
+        .underline
+        label(for='') Last Name
+    .form-row
+      .input-data
+        input(type='text' required='')
+        .underline
+        label(for='') Email Address
+      .input-data
+        input(type='text' required='')
+        .underline
+        label(for='') Website Name
+    .form-row
+      .input-data.textarea
+        textarea(rows='8' cols='80' required='')
+        br
+        .underline
+        label(for='') Write your message
+        br
+        .form-row.submit-btn
+          .input-data
+            .inner
+            input(type='submit' value='submit')
+
+block replyWishes
+  #replyWishes
+    .replyWishes-item 
+      p.name Your name
+      p.wishes Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit condimentum risus, vel tristique libero elementum eget.
+    .replyWishes-item
+      p.name Your name
+      p.wishes Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit condimentum risus, vel tristique libero elementum eget.
+    .replyWishes-item 
+      p.name Your name
+      p.wishes Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit condimentum risus, vel tristique libero elementum eget.
+    .replyWishes-item
+      p.name Your name
+      p.wishes Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit condimentum risus, vel tristique libero elementum eget.
+
+
+block footer
+  .goodbye
+    .couple(alt="Nhan and Thy")
+    p.text We Are Expecting You
+
+  .belowFooter
+    p.copyright Copyright &#169; 2023 NhanVo. All Rights Reserved
+
+block javascript
+  script(type='text/javascript' src='/js/gallery.js')
+  script(type='text/javascript' src='/js/jquery-2.1.3.min.js')
+  script(type='text/javascript' src='/js/script.js')
+  script(type='text/javascript' src='/js/countdown.js')
+
+  script. 
+    showCalendar("Dec 3, 2023 6:00:00");
+    showWishes();
+    ringer.draw();
+    //- countdownTimer("Dec 3, 2023 6:00:00");

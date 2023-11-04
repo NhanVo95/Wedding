@@ -1,0 +1,90 @@
+@use 'sass:list'
+
+@import "../utilities/_variable"
+
+$area: 1 2 3 4
+
+.events
+  & .grid-container-events
+    display: grid
+    background-color: $--clr-neutral-100
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    grid-gap: 1.3em
+    margin: 0 3em
+    align-items: center
+
+    @for $index from 1 through length($area)
+      & .item-event:nth-child(#{$index})
+        // grid-area: list.nth($area, $index)
+        background-color: $--clr-neutral-100
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        color: $--clr-black-600
+        font-family: $--ff-serif
+        font-size: $--fs-500
+        font-weight: $--fw-bold
+        margin: 0
+
+    & .item-event
+      padding: .5em
+
+      & .name
+        color: $--clr-black-600
+        font-family: $--ff-serif
+        font-size: $--fs-400
+        font-weight: $--fw-bold
+        text-transform: uppercase
+        margin: 0
+
+      & .divider
+        width: 3em
+        display: flex
+        flex-wrap: nowrap
+        justify-content: flex-start
+        align-items: center
+        padding: .4em
+        /* making vertical centerign of all children */
+
+        & p
+          color: $--clr-primary-800
+          font-family: $--ff-serif
+          font-size: $--fs-400
+          font-weight: $--fw-medium
+          margin: 0
+          padding: 0 0.5em
+
+      & .divider::before, & .divider::after
+        content: ''
+        flex: 1 1 auto
+        /* the first digint is 'flex-grow: 1', helps elemet to occupy all free space */
+        border-bottom: solid 1px $--clr-primary-800
+
+      & .time
+        color: $--clr-black-600
+        font-family: $--ff-serif
+        font-size: $--fs-400
+        font-weight: $--fw-medium
+        margin: 0
+
+      & .address
+        display: table
+        margin: 0
+        height: 2em
+
+        & span
+          color: $--clr-black-600
+          font-family: $--ff-serif
+          font-size: $--fs-300
+          font-weight: $--fw-regular
+          display: table-cell
+          vertical-align: middle
+
+      & a.map-direction
+        text-decoration: none
+        text-transform: uppercase
+
+        & span
+          color: $--clr-black-600
+          font-family: $--ff-serif
+          font-size: $--fs-300
+          font-weight: $--fw-semi-bold
+          margin: 0
