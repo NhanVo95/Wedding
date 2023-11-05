@@ -13,10 +13,6 @@ node_modules/
 public/pdf/
 public/img/jpg/
 
-# Database
-mongodb/
-# mongodb_config/
-
 # Design file
 public/design/
 public/img/invitation
@@ -27,7 +23,7 @@ ssl/
 # Docker file
 docker-compose.yml
 
-# Database config
+# Database
 mongodb/
 mongodb_config/
 redis/
