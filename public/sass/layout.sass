@@ -2,7 +2,7 @@
 
 @import "./utilities/_variable"
 
-$area: header slideshow calendar countdown titlegroombride groom bride button loveStory gallery titleEvents events titleWishes formWishes replyWishes RSVP footer
+$area: header slideshow calendar countdown titlegroombride groom bride button loveStory gallery events titleWishes formWishes replyWishes RSVP qr footer
 
 body
   & .grid-container
@@ -21,10 +21,10 @@ body
   body
     & .grid-container
       grid-template-columns: repeat(2, 1fr)
-      grid-template-areas: "header header" "slideshow slideshow" "calendar countdown" "titlegroombride titlegroombride" "groom bride" "button button" "loveStory loveStory" "gallery gallery" "titleEvents titleEvents" "events events" "titleWishes titleWishes" "formWishes replyWishes" "RSVP RSVP" "footer footer"
+      grid-template-areas: "header header" "slideshow slideshow" "calendar countdown" "titlegroombride titlegroombride" "groom bride" "button button" "loveStory loveStory" "gallery gallery" "events events" "titleWishes titleWishes" "formWishes replyWishes" "RSVP RSVP" "qr qr" "footer footer"
 
 @media screen and (max-width: 950px)
   body
     & .grid-container
       grid-template-columns: 1fr
-      grid-template-areas: "header" "slideshow" "calendar" "countdown" "titlegroombride" "groom" "bride" "button" "loveStory" "gallery" "titleEvents" "events" "titleWishes" "formWishes" "replyWishes" "RSVP" "footer"
+      grid-template-areas: "header" "slideshow" "calendar" "countdown" "titlegroombride" "groom" "bride" "button" "loveStory" "gallery" "events" "titleWishes" "formWishes" "replyWishes" "RSVP" "qr" "footer"

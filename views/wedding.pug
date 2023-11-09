@@ -53,12 +53,12 @@ block titlegroombride
 block groom
   .avatar(alt="Groom Nhan Vo")
   p.name Võ Thành Nhân
-  p.info Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit condimentum risus, vel tristique libero elementum eget.
+  p.info Một "ông già khó tính",<br>một "chàng trai nhạt nhẽo".<br>Nhưng mọi thứ dần thay đổi khi gặp được em.
 
 block bride
   .avatar(alt="Bride Thy Phung")
   p.name Phùng Anh Thy
-  p.info Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit condimentum risus, vel tristique libero elementum eget.
+  p.info Hồi xưa em ghét trai SPKT lắm.<br>Ai dè bây giờ dính luôn.<br>Giờ hổng dám ghét gì hết, ghét tiền thôi vì<br>ghét của nào trời trao của đó.
 
 block button
   a.wishes(href='#')
@@ -93,14 +93,13 @@ block gallery
           .content
             img(class= n.type src="https://drive.google.com/uc?export=view&id=" + n.id alt="")
 
-block titleEvents
+block events
   center.title 
     .label Celebrate Our Love 
     .label-date 03/12/2023
     .separator
       p &#9825
 
-block events 
   .grid-container-events
     .item-event
       center
@@ -199,6 +198,25 @@ block replyWishes
       p.name Your name
       p.wishes Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur hendrerit condimentum risus, vel tristique libero elementum eget.
 
+block qr 
+  center.title 
+    .label Gửi lời chúc đến đôi uyên ương 
+    .separator
+      p &#9825
+
+  .grid-container-qr
+    .item-qr
+      center
+        .name Gửi đến chú rể
+        .divider 
+          p &#9825
+        img.qr-bank(src="/img/qr-groom.png" alt="")
+    .item-qr
+      center
+        .name Gửi đến cô dâu
+        .divider 
+          p &#9825
+        img.qr-bank(src="/img/qr-bride.png" alt="")
 
 block footer
   .goodbye

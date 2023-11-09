@@ -3,18 +3,12 @@
 .slideshow
     background-image: url("/img/img-1.jpg"), $--dark-overlay
     background-blend-mode: overlay
-    -webkit-background-size: cover
-    -moz-background-size: cover
-    -o-background-size: cover
-    background-size: cover
-    background-position: 0% 10%
     background-repeat: no-repeat
     background-attachment: fixed
     width: 100%
     height: auto
 
     & .content-container
-        padding: 25% 0 25% 5%
 
         & .name
             color: $--clr-neutral-100
@@ -49,5 +43,29 @@
             margin: 0
             line-height: 5rem
 
-// @media screen and (min-width: 950px)
-//     .slideshow
+@media screen and (min-width: 950px)
+    .slideshow
+        -webkit-background-size: cover
+        -moz-background-size: cover
+        -o-background-size: cover
+        background-size: cover
+        background-position: 0% 10%
+
+        & .content-container
+            padding: 25% 0 25% 5%
+
+@media screen and (max-width: 950px)
+    .slideshow
+        background-size: contain
+        background-position: center 25%
+
+        & .content-container
+            padding: 5% 0 5% 5%
+
+@media screen and (max-width: 485px)
+    .slideshow
+        background-size: cover
+        background-position: 70% 30%
+
+        & .content-container
+            padding: 5% 0 5% 5%
