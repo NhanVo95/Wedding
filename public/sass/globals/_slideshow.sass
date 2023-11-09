@@ -3,11 +3,14 @@
 .slideshow
     background-image: url("/img/img-1.jpg"), $--dark-overlay
     background-blend-mode: overlay
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
     background-size: cover
     background-position: 0% 10%
     background-repeat: no-repeat
     background-attachment: fixed
-    max-width: 100%
+    width: 100%
     height: auto
 
     & .content-container
@@ -45,3 +48,6 @@
             font-weight: $--fw-bold
             margin: 0
             line-height: 5rem
+
+// @media screen and (min-width: 950px)
+//     .slideshow

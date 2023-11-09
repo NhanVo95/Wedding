@@ -27,7 +27,7 @@ docker-compose.yml
 mongodb/
 mongodb_config/
 redis/
-redis.conf
+redis_config/
 
 # Monitoring the server
 prometheus-data/
