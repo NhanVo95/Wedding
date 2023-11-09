@@ -12,9 +12,9 @@ router.get("/", function (req, res, next) {
     .pipe(csv())
     .on("data", (data) => results.push(data))
     .on("end", () => {
-      results.forEach(async (data) => {
-        console.log(data);
-      });
+      // results.forEach(async (data) => {
+      //   console.log(data);
+      // });
       res.render("wedding", { title: "Nhan & Thy", data: results });
     });
 });

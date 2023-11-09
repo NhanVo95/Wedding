@@ -17,6 +17,21 @@ var months = [
   "Dec",
 ];
 
+var months_vi = [
+  "Tháng 1",
+  "Tháng 2",
+  "Tháng 3",
+  "Tháng 4",
+  "Tháng 5",
+  "Tháng 6",
+  "Tháng 7",
+  "Tháng 8",
+  "Tháng 9",
+  "Tháng 10",
+  "Tháng 11",
+  "Tháng 12",
+];
+
 function showCalendar(wedding) {
   var day = new Date(wedding).getDate();
   var month = new Date(wedding).getMonth();
@@ -41,7 +56,7 @@ function showCalendar(wedding) {
     "</tr></tbody>";
 
   // filing data about month and in the page via DOM.
-  caption.innerHTML = months[month] + " " + year;
+  caption.innerHTML = months_vi[month] + " năm " + year;
 
   // creating all cells
   let date = 1;
