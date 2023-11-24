@@ -94,7 +94,7 @@ block gallery
       if n.show == "TRUE"
         .gallery-item 
           .content
-            img(class= n.type src="https://drive.google.com/uc?export=view&id=" + n.id alt="")
+            img(class= n.type src="https://drive.google.com/uc?export=view&id=" + n.id alt="" loading="lazy")
 
 block events
   center.title 
